@@ -10,6 +10,8 @@ title=$(jq -r ".pull_request.title" "$GITHUB_EVENT_PATH")
 labels=$(jq -r ".pull_request.labels" "$GITHUB_EVENT_PATH")
 
 checkForBlockingWords(){
+echo "checking ${1}"
+
     if echo $1 | grep -iE 'WIP|do not merge|backend not live'
     then
        exit 1
