@@ -11,4 +11,4 @@ echo $GITHUB_EVENT_PATH
 # Block if wip found in title
 echo "Checking if contains WIP ..."
 (jq .)
-(jq -r ".pull_request.title" "$GITHUB_EVENT_PATH" | grep -E "wip") && exit 78
+(jq -r ".pull_request.title" "$GITHUB_EVENT_PATH" | grep -E "wip") exit 1 && exit 0
