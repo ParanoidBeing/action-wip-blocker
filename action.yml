@@ -1,0 +1,5 @@
+name: 'WIP Blocker'
+description: 'Blocks PRs that are WIP'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
