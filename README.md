@@ -2,7 +2,7 @@
 
 A GitHub Action that blocks PRs that are tagged by WIP (et al) or have WIP in their title. A fail fast method to remind the reviewer that the current PR is still a work in progress and should not be merged.
 
-Works on labels and titles as of now. Currently, the set of blocked words are limited. Open to PRs / Improvements.
+Scans labels and title of the PR and fails if it encounters any of the blocked words in them.
 
 ## Usage
 
@@ -25,14 +25,8 @@ jobs:
       uses: ParanoidBeing/action-wip-blocker@v0.1.0
       env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BLOCK_LIST: "WIP|do not merge|backend not live"
 ```
 
 Depending on your project's requrirements you may add / remove triggers and/or branches [Pull request events](https://help.github.com/en/articles/events-that-trigger-workflows#pull-request-event-pull_request)
 
-## Currently Blocking
-``` 
-WIP 
-do not merge
-backend not live
-```
-Case Insensitive
