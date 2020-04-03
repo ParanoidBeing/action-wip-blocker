@@ -8,6 +8,12 @@ if [[ -z "$GITHUB_TOKEN" ]]; then
   exit 1
 fi
 
+#Making sure we have the block list
+if [[ -z "$BLOCK_LIST" ]]; then
+  echo "Set the GITHUB_TOKEN env variable."
+  exit 1
+fi
+
 # skip if not a PR
 echo "Checking if a PR command..."
 (jq -r ".pull_request.url" "$GITHUB_EVENT_PATH") || exit 78
@@ -36,7 +42,7 @@ labels=$(jq ".labels" <<< "$RESPONSE")
 #Block if suspect words are found.
 #Todo - words to be provided as action input.
 checkForBlockingWords(){
-    if  echo "${1}  ${2}" | grep -iE 'WIP|do not merge|backend not live'
+    if  echo "${1}  ${2}" | grep -iE "$BLOCK_LIST"
     then
        return 1
     else
