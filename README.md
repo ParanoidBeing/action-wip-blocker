@@ -29,3 +29,10 @@ jobs:
 
 Depending on your project's requrirements you may add / remove triggers and/or branches [Pull request events](https://help.github.com/en/articles/events-that-trigger-workflows#pull-request-event-pull_request)
 
+## Currently Blocking
+``` 
+WIP 
+do not merge
+backend not live
+```
+Case Insensitive
