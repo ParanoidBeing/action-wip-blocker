@@ -22,7 +22,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Block if WIP PR
-      uses: ParanoidBeing/action-wip-blocker@v0.1.0
+      uses: ParanoidBeing/action-wip-blocker@v0.1.1
       env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BLOCK_LIST: "WIP|do not merge|backend not live"
