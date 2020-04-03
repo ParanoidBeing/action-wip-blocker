@@ -1,7 +1,7 @@
 name: 'WIP Blocker'
 description: 'Blocks PRs that are WIP'
-icon: 'alert-octagon'
-color: 'gray-dark'
+icon: alert-octagon
+color: gray-dark
 runs:
   using: 'docker'
   image: 'Dockerfile'
