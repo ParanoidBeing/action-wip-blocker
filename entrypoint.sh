@@ -10,7 +10,7 @@ fi
 
 #Making sure we have the block list
 if [[ -z "$BLOCK_LIST" ]]; then
-  echo "Set the GITHUB_TOKEN env variable."
+  echo "Set the BLOCK_LIST env variable."
   exit 1
 fi
 
